@@ -59,23 +59,23 @@ export default function Index() {
       title: "ShopX Shopping Website",
       description: "Full-stack e-commerce application with payment integration, user authentication, and admin dashboard.",
       tech: ["Html", "Css", "Js", "MySQL", "Node.js", "Express.js"],
-      image: "/placeholder.svg",
+      image: "/logowhite.png",
       demo: "#",
       github: "https://github.com/ktejas25/ShopX-Shopping-Website"
     },
     {
-      title: "Real-Time Chat Application",
-      description: "WebSocket-powered chat app with rooms, file sharing, and real-time notifications.",
-      tech: ["React", "Socket.io", "Express", "MongoDB", "Tailwind"],
-      image: "/placeholder.svg",
+      title: "Harmony Chat Application",
+      description: "Discord Web chat app with servers and channels, file sharing, and real-time notifications.",
+      tech: ["React", "Socket.io", "Express", "Supabase", "Tailwind"],
+      image: "/harmony.png",
       demo: "#",
-      github: "#"
+      github: "https://github.com/ktejas25/DiscordWeb"
     },
     {
       title: "ShopX Shopping App",
       description: "Full-stack e-commerce application with payment integration, user authentication, and admin dashboard.",
       tech: ["Android", "Firebase firestore"],
-      image: "/placeholder.svg",
+      image: "/logowhite.png",
       demo: "#",
       github: "https://github.com/ktejas25/ShopX-Shopping-App"
     },
@@ -83,7 +83,7 @@ export default function Index() {
       title: "AI-Powered Text-to-Speech Tool",
       description: "Advanced TTS application with multiple voice models and real-time audio generation.",
       tech: ["Next.js", "OpenAI API", "AWS S3", "TypeScript", "Prisma"],
-      image: "/placeholder.svg",
+      image: "/voiceforge.jpg",
       demo: "#",
       github: "#"
     }
@@ -372,10 +372,12 @@ export default function Index() {
             <div className="grid md:grid-cols-2 gap-8">
               {projects.map((project, index) => (
                 <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-primary/20">
-                  <div className="aspect-video bg-gradient-to-br from-primary/10 to-primary/5 rounded-t-lg flex items-center justify-center">
-                    <div className="text-6xl opacity-20">
-                      {index % 2 === 0 ? <Smartphone /> : <Zap />}
-                    </div>
+                  <div className="aspect-video bg-gradient-to-br from-primary/10 to-primary/5 rounded-t-lg overflow-hidden">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
                   </div>
                   
                   <CardHeader>
