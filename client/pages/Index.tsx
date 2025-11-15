@@ -180,10 +180,17 @@ export default function Index() {
           </div>
 
           <div className="flex items-center gap-4">
-            <div className="flex items-center space-x-2">
-              <Sun className="h-4 w-4" />
-              <Switch checked={darkMode} onCheckedChange={toggleDarkMode} />
-              <Moon className="h-4 w-4" />
+            <div className="relative flex items-center bg-muted/50 rounded-full p-1 border border-border/50 backdrop-blur-sm">
+              <button
+                onClick={toggleDarkMode}
+                className="theme-toggle relative flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary/50"
+                aria-label="Toggle theme"
+              >
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-400 to-yellow-400 opacity-0 dark:opacity-0 light:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 dark:opacity-100 transition-opacity duration-300" />
+                <Sun className={`h-5 w-5 absolute transition-all duration-300 ${darkMode ? 'rotate-90 scale-0 text-transparent' : 'rotate-0 scale-100 text-white drop-shadow-sm'}`} />
+                <Moon className={`h-5 w-5 absolute transition-all duration-300 ${darkMode ? 'rotate-0 scale-100 text-white drop-shadow-sm' : '-rotate-90 scale-0 text-transparent'}`} />
+              </button>
             </div>
           </div>
         </div>
