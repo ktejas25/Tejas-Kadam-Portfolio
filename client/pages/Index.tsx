@@ -80,12 +80,12 @@ export default function Index() {
       github: "https://github.com/ktejas25/ShopX-Shopping-App"
     },
     {
-      title: "AI-Powered Text-to-Speech Tool",
+      title: "AI-Text-to-Speech",
       description: "Advanced TTS application with multiple voice models and real-time audio generation.",
-      tech: ["Next.js", "OpenAI API", "AWS S3", "TypeScript", "Prisma"],
+      tech: ["React.js", "Vite", "Tailwind CSS", "Shadcn UI", "React-Hooks", "Web Speech API", "Node.js", "Express.js", "Rest API"],
       image: "/voiceforge.jpg",
       demo: "#",
-      github: "#"
+      github: "https://github.com/ktejas25/TTS"
     }
   ];
 
