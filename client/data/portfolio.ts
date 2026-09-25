@@ -61,17 +61,17 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/ktejas25/Delivery-Proof",
     featured: true,
   },
-  {
-    id: "soundsync",
-    title: "SoundSync Audio Platform",
-    description:
-      "Modern dark-glassmorphic collaborative music streaming web application featuring real-time playlist synchronization, modular audio widgets, and responsive UI.",
-    tech: ["React", "TypeScript", "Node.js", "Express.js", "SQL", "Tailwind CSS", "Vite"],
-    category: "Full Stack",
-    image: "/soundsync.png",
-    githubUrl: "https://github.com/ktejas25/SoundSync",
-    featured: true,
-  },
+  // {
+  //   id: "soundsync",
+  //   title: "SoundSync Audio Platform",
+  //   description:
+  //     "Modern dark-glassmorphic collaborative music streaming web application featuring real-time playlist synchronization, modular audio widgets, and responsive UI.",
+  //   tech: ["React", "TypeScript", "Node.js", "Express.js", "SQL", "Tailwind CSS", "Vite"],
+  //   category: "Full Stack",
+  //   image: "/soundsync.png",
+  //   githubUrl: "https://github.com/ktejas25/SoundSync",
+  //   featured: true,
+  // },
   {
     id: "harmony-chat",
     title: "Harmony Chat Application",
@@ -94,28 +94,28 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/ktejas25/TTS",
     featured: true,
   },
-  {
-    id: "personal-shopper-ghost",
-    title: "Personal Shopper Ghost",
-    description:
-      "AI-powered personal shopping intelligence engine pairing an NLP recommendation microservice with full-stack product discovery and user preference profiling.",
-    tech: ["React", "TypeScript", "Python", "FastAPI", "NLP", "Node.js", "Express.js", "PostgreSQL"],
-    category: "AI / ML",
-    image: "/ghostshopper.jpg",
-    githubUrl: "https://github.com/ktejas25/PersonalShopperGhost",
-    featured: true,
-  },
-  {
-    id: "osmique",
-    title: "Osmique Luxury Fragrance Platform",
-    description:
-      "High-end digital experience and backend architecture for luxury fragrance branding, featuring automated fragrance consultation audits, authentication, and newsletter pipelines.",
-    tech: ["Python", "FastAPI", "React", "Docker", "PostgreSQL", "Tailwind CSS"],
-    category: "Full Stack",
-    image: "/osmique.jpg",
-    githubUrl: "https://github.com/ktejas25/Osmique",
-    featured: true,
-  },
+  // {
+  //   id: "personal-shopper-ghost",
+  //   title: "Personal Shopper Ghost",
+  //   description:
+  //     "AI-powered personal shopping intelligence engine pairing an NLP recommendation microservice with full-stack product discovery and user preference profiling.",
+  //   tech: ["React", "TypeScript", "Python", "FastAPI", "NLP", "Node.js", "Express.js", "PostgreSQL"],
+  //   category: "AI / ML",
+  //   image: "/ghostshopper.jpg",
+  //   githubUrl: "https://github.com/ktejas25/PersonalShopperGhost",
+  //   featured: true,
+  // },
+  // {
+  //   id: "osmique",
+  //   title: "Osmique Luxury Fragrance Platform",
+  //   description:
+  //     "High-end digital experience and backend architecture for luxury fragrance branding, featuring automated fragrance consultation audits, authentication, and newsletter pipelines.",
+  //   tech: ["Python", "FastAPI", "React", "Docker", "PostgreSQL", "Tailwind CSS"],
+  //   category: "Full Stack",
+  //   image: "/osmique.jpg",
+  //   githubUrl: "https://github.com/ktejas25/Osmique",
+  //   featured: true,
+  // },
   {
     id: "music-by-tk",
     title: "MusicByTK Streaming & Stats",
@@ -149,17 +149,17 @@ export const PROJECTS: Project[] = [
     githubUrl: "https://github.com/ktejas25/ShopX-Shopping-App",
     featured: true,
   },
-  {
-    id: "sparkal-beauty",
-    title: "Sparkal Beauty Platform",
-    description:
-      "E-commerce and salon booking web system with MySQL inventory management, client appointment scheduling, and responsive product catalog showcases.",
-    tech: ["JavaScript", "Node.js", "Express.js", "MySQL", "HTML5", "CSS3"],
-    category: "Full Stack",
-    image: "/sparkal.png",
-    githubUrl: "https://github.com/ktejas25/sparkal-beauty-server",
-    featured: true,
-  },
+  // {
+  //   id: "sparkal-beauty",
+  //   title: "Sparkal Beauty Platform",
+  //   description:
+  //     "E-commerce and salon booking web system with MySQL inventory management, client appointment scheduling, and responsive product catalog showcases.",
+  //   tech: ["JavaScript", "Node.js", "Express.js", "MySQL", "HTML5", "CSS3"],
+  //   category: "Full Stack",
+  //   image: "/sparkal.png",
+  //   githubUrl: "https://github.com/ktejas25/sparkal-beauty-server",
+  //   featured: true,
+  // },
   {
     id: "tic-tac-toe",
     title: "Interactive Tic-Tac-Toe",
