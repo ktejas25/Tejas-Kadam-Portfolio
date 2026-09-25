@@ -49,28 +49,28 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </CardTitle>
             <div className="flex items-center gap-1 shrink-0">
               {hasValidDemo && (
-                <Button size="icon" variant="ghost" className="h-8 w-8 text-muted-foreground hover:text-primary" asChild>
+                <Button size="icon" variant="ghost" className="h-9 w-9 min-h-[44px] min-w-[44px] text-muted-foreground hover:text-primary focus-visible:ring-2 focus-visible:ring-primary" asChild>
                   <a
                     href={project.demoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`Live demo for ${project.title}`}
+                    aria-label={`Live demo for ${project.title} (opens in a new tab)`}
                     title="Live Demo"
                   >
-                    <ExternalLink className="h-4 w-4" />
+                    <ExternalLink className="h-4 w-4" aria-hidden="true" />
                   </a>
                 </Button>
               )}
               {project.githubUrl && (
-                <Button size="icon" variant="ghost" className="h-8 w-8 text-muted-foreground hover:text-primary" asChild>
+                <Button size="icon" variant="ghost" className="h-9 w-9 min-h-[44px] min-w-[44px] text-muted-foreground hover:text-primary focus-visible:ring-2 focus-visible:ring-primary" asChild>
                   <a
                     href={project.githubUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`GitHub repository for ${project.title}`}
+                    aria-label={`GitHub repository for ${project.title} (opens in a new tab)`}
                     title="View Source Code"
                   >
-                    <Github className="h-4 w-4" />
+                    <Github className="h-4 w-4" aria-hidden="true" />
                   </a>
                 </Button>
               )}
@@ -83,7 +83,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
       </div>
 
       <CardContent className="pt-0">
-        <div className="flex flex-wrap gap-1.5 mt-2">
+        <div className="flex flex-wrap gap-1.5 mt-2" aria-label="Technologies used">
           {project.tech.map((tech) => (
             <Badge
               key={tech}
@@ -96,21 +96,41 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
         {/* Footer Actions */}
-        <div className="mt-4 pt-3 border-t border-border/60 flex items-center justify-between">
+        <div className="mt-4 pt-2 border-t border-border/60 flex items-center justify-between">
           {project.githubUrl && (
-            <Button variant="link" size="sm" className="p-0 h-auto text-xs text-primary flex items-center gap-1 font-medium" asChild>
-              <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                <Github className="h-3.5 w-3.5" />
-                View Code
+            <Button
+              variant="link"
+              size="sm"
+              className="p-0 h-auto min-h-[44px] text-xs text-primary flex items-center gap-1.5 font-medium focus-visible:ring-2 focus-visible:ring-primary"
+              asChild
+            >
+              <a
+                href={project.githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`View source code for ${project.title} on GitHub (opens in a new tab)`}
+              >
+                <Github className="h-3.5 w-3.5" aria-hidden="true" />
+                <span>View Code</span>
               </a>
             </Button>
           )}
 
           {hasValidDemo ? (
-            <Button variant="link" size="sm" className="p-0 h-auto text-xs text-primary flex items-center gap-1 font-medium" asChild>
-              <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="h-3.5 w-3.5" />
-                Live Demo
+            <Button
+              variant="link"
+              size="sm"
+              className="p-0 h-auto min-h-[44px] text-xs text-primary flex items-center gap-1.5 font-medium focus-visible:ring-2 focus-visible:ring-primary"
+              asChild
+            >
+              <a
+                href={project.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Open live demo for ${project.title} (opens in a new tab)`}
+              >
+                <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+                <span>Live Demo</span>
               </a>
             </Button>
           ) : (

@@ -44,7 +44,7 @@ export function ProjectsSection() {
                     onClick={() => setActiveCategory(category)}
                     role="tab"
                     aria-selected={isActive}
-                    className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
+                    className={`inline-flex items-center gap-2 px-4 py-2.5 min-h-[44px] rounded-full text-xs sm:text-sm font-medium transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
                       isActive
                         ? "bg-primary text-primary-foreground shadow-md scale-105"
                         : "bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground"
@@ -65,12 +65,31 @@ export function ProjectsSection() {
             </div>
           </div>
 
-          {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 gap-8">
-            {filteredProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
-          </div>
+          {/* Projects Grid or Accessible Empty State */}
+          {filteredProjects.length > 0 ? (
+            <div className="grid md:grid-cols-2 gap-8" role="region" aria-label="Projects list">
+              {filteredProjects.map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+            </div>
+          ) : (
+            <div
+              role="status"
+              className="text-center py-16 px-4 border-2 border-dashed rounded-2xl bg-card/50 max-w-md mx-auto"
+            >
+              <p className="text-muted-foreground mb-4 text-sm sm:text-base">
+                No projects currently categorized under <strong className="text-foreground">{activeCategory}</strong>.
+              </p>
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => setActiveCategory("All")}
+                className="font-medium min-h-[44px]"
+              >
+                View All Projects
+              </Button>
+            </div>
+          )}
 
           {/* GitHub Profile CTA */}
           <div className="text-center mt-16">
