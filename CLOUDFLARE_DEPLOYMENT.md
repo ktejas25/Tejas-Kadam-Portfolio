@@ -86,8 +86,7 @@ All variables are defined in `.env.example`.
 
 | File | Purpose |
 | :--- | :--- |
-| `wrangler.jsonc` | Unified Cloudflare Workers configuration with Static Assets binding and SPA fallback. |
-| `public/_redirects` | Cloudflare Pages SPA client-side routing rules (`/* /index.html 200`). |
+| `wrangler.jsonc` | Unified Cloudflare Workers configuration with Static Assets binding and built-in SPA fallback (`not_found_handling: "single-page-application"`). |
 | `public/_headers` | Cloudflare security headers (HSTS, CSP, X-Frame-Options) and immutable asset caching. |
 | `server/worker.ts` | Edge Worker entrypoint executing `/api/*` routes and delegating static requests. |
 | `functions/api/ping.ts` | Cloudflare Pages Function endpoint for `/api/ping`. |
@@ -201,9 +200,13 @@ To route your personal domain (e.g., `tejaskadam.dev` or `yourdomain.com`):
 
 ## 11. Troubleshooting Common Cloudflare Issues
 
-### 1. "Page Not Found / 404 on Page Refresh"
-* **Cause**: Client-side SPA routing not redirecting back to `index.html`.
-* **Fix**: Ensure `public/_redirects` contains `/* /index.html 200` and `wrangler.jsonc` has `"not_found_handling": "single-page-application"`.
+### 1. "Invalid _redirects configuration: Infinite loop detected [code: 100324]"
+* **Cause**: In Cloudflare Workers Static Assets, using `/* /index.html 200` in a `_redirects` file conflicts with Cloudflare's automatic path normalization (`/index.html` -> `/`), causing an infinite loop error.
+* **Fix**: Do not use `/* /index.html 200` in `_redirects`. In `wrangler.jsonc`, `"not_found_handling": "single-page-application"` is the official native Cloudflare mechanism that handles SPA routing cleanly without redirect loops.
+
+### 2. "Page Not Found / 404 on Page Refresh"
+* **Cause**: Client-side SPA routing not falling back to `index.html`.
+* **Fix**: Ensure `wrangler.jsonc` has `"not_found_handling": "single-page-application"` in the `assets` block.
 
 ### 2. "Mixed Content Warning / Insecure Request"
 * **Cause**: Hardcoded `http://` URLs in assets or APIs.
