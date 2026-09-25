@@ -11,7 +11,7 @@ import { Mail, Linkedin, Github, MessageSquare, Send, Loader2, CheckCircle2 } fr
 import { PROFILE_INFO } from "@/data/portfolio";
 import { toast } from "sonner";
 
-const contactSchema = z.object({
+export const contactSchema = z.object({
   name: z
     .string()
     .min(2, { message: "Name must be at least 2 characters." })
@@ -25,7 +25,7 @@ const contactSchema = z.object({
     .max(1000, { message: "Message cannot exceed 1000 characters." }),
 });
 
-type ContactFormData = z.infer<typeof contactSchema>;
+export type ContactFormData = z.infer<typeof contactSchema>;
 
 // Public Web3Forms submission access key
 const WEB3FORMS_ACCESS_KEY = "a2afd3c9-849a-41ba-8b70-9068de605274";
