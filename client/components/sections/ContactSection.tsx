@@ -48,7 +48,9 @@ export const contactSchema = z.object({
 export type ContactFormData = z.infer<typeof contactSchema>;
 
 /** Public Web3Forms submission access key */
-const WEB3FORMS_ACCESS_KEY = "a2afd3c9-849a-41ba-8b70-9068de605274";
+const WEB3FORMS_ACCESS_KEY =
+  (import.meta.env.VITE_WEB3FORMS_ACCESS_KEY as string | undefined) ||
+  "a2afd3c9-849a-41ba-8b70-9068de605274";
 
 export function ContactSection() {
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);

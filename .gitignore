@@ -25,3 +25,9 @@ dist-ssr
 
 .config/
 !.env
+
+# Cloudflare Wrangler & local dev vars
+.wrangler/
+.dev.vars*
+.env*.local
+

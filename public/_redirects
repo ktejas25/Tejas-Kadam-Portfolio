@@ -1,0 +1,6 @@
+# Cloudflare Pages Redirects & SPA Routing
+# 1. API routes pass through to Functions
+/api/*  /api/:splat  200
+
+# 2. React Router 6 SPA fallback
+/*      /index.html   200

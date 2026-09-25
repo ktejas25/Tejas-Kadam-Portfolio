@@ -18,7 +18,11 @@
     "start": "node dist/server/node-build.mjs",
     "test": "vitest --run",
     "format.fix": "prettier --write .",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "deploy:cf": "npm run build:client && wrangler deploy",
+    "preview:cf": "npm run build:client && wrangler dev",
+    "pages:build": "npm run build:client",
+    "pages:deploy": "wrangler pages deploy dist/spa"
   },
   "dependencies": {
     "dotenv": "^17.2.1",
