@@ -5,9 +5,9 @@ import { Github } from "lucide-react";
 import { PROJECTS, PROFILE_INFO } from "@/data/portfolio";
 import { ProjectCard } from "@/components/ProjectCard";
 
-type ProjectCategoryFilter = "All" | "Full Stack" | "Frontend" | "Mobile";
+type ProjectCategoryFilter = "All" | "Full Stack" | "AI / ML" | "Frontend" | "Mobile";
 
-const CATEGORIES: ProjectCategoryFilter[] = ["All", "Full Stack", "Frontend", "Mobile"];
+const CATEGORIES: ProjectCategoryFilter[] = ["All", "Full Stack", "AI / ML", "Frontend", "Mobile"];
 
 export function ProjectsSection() {
   const [activeCategory, setActiveCategory] = useState<ProjectCategoryFilter>("All");
