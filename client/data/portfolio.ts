@@ -57,7 +57,7 @@ export const PROJECTS: Project[] = [
       "Enterprise-grade multi-tenant proof-of-delivery, fleet tracking, and AI-driven dispute resolution platform with real-time socket updates, photo verification, and signature capture.",
     tech: ["React 18", "TypeScript", "Tailwind CSS", "FastAPI", "Express.js", "MySQL", "Socket.io", "Vite"],
     category: "Full Stack",
-    image: "/deliveryproof.png",
+    image: "/deliveryproof.jpg",
     githubUrl: "https://github.com/ktejas25/Delivery-Proof",
     featured: true,
   },
